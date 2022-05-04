@@ -6,6 +6,6 @@ variable "ssh_public_key_path" {
 
 variable "generate_ssh_key" {
   type        = bool
-  description = "If set to `true`, new SSH key pair will be created"
+  description = "If set to `true`, new SSH key pair will be created."
   default     = true
 }
