@@ -14,7 +14,7 @@ locals {
   }
 
   instance_types = {
-    "dev"  = "t3.micro"
+    "dev"  = "t2.micro"
     "beta" = "t2.micro"
     "prod" = "t2.micro"
   }
