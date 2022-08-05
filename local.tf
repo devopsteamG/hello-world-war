@@ -48,4 +48,5 @@ locals {
   key_name                 = lookup(local.key_names, local.env)
   subnet_id                = lookup(local.subnet_ids, local.env)
   ami_id                   = lookup(local.ami_ids, local.env)
+  os                       = "linux"
 }
