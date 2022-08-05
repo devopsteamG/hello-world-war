@@ -12,7 +12,7 @@ module "ssh_key_pair" {
 
 }
 module "ec2_instance" {
-  source                 = "git@github.com:bablubharath/aws-terraform-modules//ec2?ref=main"
+  source                 = "git@github.com:devopsteamG/aws-terraform-modules.git//ec2?ref=main"
 
   name                   = local.name
   instance_count         = 1
