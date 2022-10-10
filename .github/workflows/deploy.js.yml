@@ -1,0 +1,24 @@
+name: Deploy in kubernetes
+
+on:
+  push:
+    branches: [ gitactons ]
+  pull_request:
+    branches: [ gitactions ]
+
+jobs:
+  deploy:
+    name: Deploy to kubernetes
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+    - name: create kubeconfig
+      run: |
+        mkdir ${home}/.kube
+        echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${home}/.kube/config
+        cat ${home}/.kube/config
+    - name: use context
+      run: kubectl config use-context minikube
+    - name: create ns in k8s
+      run: kubectl create namespace test
