@@ -2,9 +2,9 @@ name: Deploy in kubernetes
 
 on:
   push:
-    branches: [ "gitactons" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "gitactions" ]
+    branches: [ "master" ]
 
 jobs:
   deploy:
