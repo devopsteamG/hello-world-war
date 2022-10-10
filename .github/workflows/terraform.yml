@@ -16,7 +16,7 @@ jobs:
     - name: create kubeconfig
       run: |
         sudo -i
-        mkdir ${home}/.kube
+        sudo mkdir ${home}/.kube
         echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${home}/.kube/config
         cat ${home}/.kube/config
     - name: use context
