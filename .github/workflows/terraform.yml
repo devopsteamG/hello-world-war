@@ -15,7 +15,6 @@ jobs:
       uses: actions/checkout@v2
     - name: create kubeconfig
       run: |
-        sudo -i
         sudo mkdir ${home}/.kube
         echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${home}/.kube/config
         cat ${home}/.kube/config
