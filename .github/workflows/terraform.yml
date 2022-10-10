@@ -15,9 +15,11 @@ jobs:
       uses: actions/checkout@v2
     - name: create kubeconfig
       run: |
-        sudo mkdir ${home}/.kube
+        sudo -i <<- 'ENDSSH'
+        mkdir ${home}/.kube
         echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > ${home}/.kube/config
         cat ${home}/.kube/config
+        ENDSSH
     - name: use context
       run: kubectl config use-context minikube
     - name: create ns in k8s
